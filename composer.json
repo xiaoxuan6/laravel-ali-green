@@ -1,0 +1,36 @@
+{
+    "name": "james.xue/laravel-ali-green",
+    "description": "laravel 阿里鉴黄包括文本、图片、视频，关键词文本检测以及对图片涉黄、暴恐、敏感检测、广告、二维码视频色情、暴恐涉政视频等",
+    "type": "library",
+    "keywords": ["laravel", "green", "yellow", "ali-green"],
+    "support": {
+        "issues": "https://github.com/xiaoxuan6/laravel-ali-green/issues",
+        "source": "https://github.com/xiaoxuan6/laravel-ali-green"
+    },
+    "authors": [
+        {
+            "name": "james.xue",
+            "email": "1527736751@qq.com"
+        }
+    ],
+    "require": {
+        "james.xue/ali-safe-api": "^1.2|^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "James\\Laravel\\AliGreen\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers":[
+                "James\\Laravel\\AliGreen\\LaravelAliGreenServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAliGreen" : "James\\Laravel\\AliGreen\\Facades\\LaravelAliGreen"
+            }
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}
