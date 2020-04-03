@@ -29,7 +29,7 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
         if($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/aliyun.php' => config_path('aliyun.php')
-            ], 'aliyun');
+            ], 'aliyun-green');
         }
     }
 

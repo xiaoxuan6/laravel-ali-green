@@ -32,6 +32,14 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
     protected static $_instance;
 
     /**
+     * @var array
+     */
+    protected static $response = [
+        'code' => 500,
+        'msg' => '不合法的参数！'
+    ];
+
+    /**
      * Get connection instance.
      *
      * @return AliGreenInterface
@@ -75,7 +83,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
     public function checkVideo($video)
     {
         if(!$video) {
-            return null;
+            return self::$response;
         }
 
         $video = is_array($video) ? $video : array($video);
@@ -108,9 +116,9 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
         if(200 == $response->code){
             $result = $response->data;
 
-            $this->result = [];
+            $this->result = ['code' => 200];
             foreach($result as $value) {
-                $this->result[] = [
+                $this->result['msg'][] = [
                     'url' => $value->url,
                     'taskId' => $value->taskId,
                 ];
@@ -125,13 +133,19 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
     /**
      * Notes: 查询视频异步检测结果
      * Date: 2020/4/2 16:15
-     * @param array $taskIds
+     * @param string|array $taskIds
      * @return array|\Illuminate\Http\JsonResponse|string
      *
      * 客户端定时轮询查询异步检测结果。建议您将查询间隔设置为30秒，最长不能超出一个小时，否则结果将会丢失。
      */
-    public function checkResult(array $taskIds)
+    public function checkResult($taskIds)
     {
+        if(!$taskIds) {
+            return self::$response;
+        }
+
+        $taskIds = is_array($taskIds) ? $taskIds : array($taskIds);
+
         $request = new VideoAsyncScanResultsRequest();
         $request->setMethod("POST");
         $request->setAcceptFormat("JSON");
@@ -154,7 +168,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
                 }
 
                 foreach ($value->results as $item) {
-                    $this->result[] = [
+                    $this->result['msg'][] = [
                         'url' => $value->url,
                         'label' => $item->label,
                         'rate' => $item->rate,
@@ -171,7 +185,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface,Arrayable
     }
 
     /**
-     * Get the instance as an array.
+     * Get the result as an array.
      *
      * @return array
      */

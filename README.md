@@ -9,6 +9,8 @@
 
 ```shell
 composer require "james.xue/laravel-ali-green"
+
+php artisan vendor:publish --tag=aliyun-green
 ```
 
 ## Usage
@@ -23,7 +25,7 @@ LaravelAliGreen::checkText('cnm');
 // 图片
 LaravelAliGreen::checkImg('http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg');
 
-// 视频（异步）视频同步检测接口只支持通过上传视频截帧图片的方式进行检测，目前不支持同步
+// 视频（异步）视频同步检测接口只支持通过上传视频截帧图片的方式进行检测，目前本扩展包不支持同步
 LaravelAliGreen::checkVideo(['http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4','http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4']);
 
 // 查询视频异步检测结果 taskId
