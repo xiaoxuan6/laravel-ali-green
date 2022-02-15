@@ -74,6 +74,20 @@ class FeaturesTest extends TestCase
         $this->assertEquals(200, $result['code'], $result['msg']);
     }
 
+    public function test_set_scenes_check_img()
+    {
+        $result = LaravelAliGreen::store(['porn'])->checkText('傻逼');
+
+        $this->assertIsArray($result);
+        $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
+
+
+        $result = LaravelAliGreen::store(['porn'])->checkImg(['http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg', 'http://img14.360buyimg.com/n8/jfs/t1/171001/3/27661/137322/61bada34E7fc1abbd/93795acd9b991d02.jpg']);
+
+        $this->assertIsArray($result);
+        $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
+    }
+
     /* 数组形式 */
     public function test_check_array_text()
     {

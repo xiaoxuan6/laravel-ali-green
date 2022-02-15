@@ -74,12 +74,14 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
     /**
      * Notes: set scenes
      * Date: 2020/4/2 18:53
-     * @param $scenes
+     * @param array $scenes
      * @return AliGreen
      */
-    public function setScenes($scenes): static
+    public function setScenes(array $scenes): static
     {
         $this->scenes = $scenes;
+
+        config(['aliyun.scenes' => $scenes]);
 
         return $this;
     }

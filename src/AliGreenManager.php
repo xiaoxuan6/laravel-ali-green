@@ -34,10 +34,10 @@ class AliGreenManager
     /**
      * Notes:
      * Date: 2020/4/2 11:43
-     * @param null $scenes
+     * @param array $scenes
      * @return Contracts\AliGreen
      */
-    public function store($scenes = null): Contracts\AliGreen
+    public function store(array $scenes = []): Contracts\AliGreen
     {
         $scenes = $scenes ?: $this->getDefaultScenes();
 
@@ -46,8 +46,9 @@ class AliGreenManager
 
     /**
      * Get the default aliyun scenes.
+     * @return array
      */
-    protected function getDefaultScenes()
+    protected function getDefaultScenes(): array
     {
         return $this->app['config']['aliyun.scenes'];
     }

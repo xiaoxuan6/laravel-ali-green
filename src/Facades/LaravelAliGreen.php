@@ -11,7 +11,15 @@ namespace James\Laravel\AliGreen\Facades;
 
 use RuntimeException;
 use Illuminate\Support\Facades\Facade;
+use James\Laravel\AliGreen\{AliGreen, AliGreenManager};
 
+/**
+ * @method static AliGreen checkText(array|string $text)
+ * @method static AliGreen checkImg(array|string $img)
+ * @method static AliGreen checkVideo(array|string $video)
+ * @method static AliGreen checkResult(array|string $taskIds)
+ * @method static AliGreenManager store(array $scenes = [])
+ */
 class LaravelAliGreen extends Facade
 {
     /**
