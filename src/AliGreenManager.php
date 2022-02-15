@@ -1,11 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: james.xue
- * Date: 2020/4/2
- * Time: 11:14
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) vinhson <15227736751@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Foundation\Application;
@@ -15,15 +16,14 @@ class AliGreenManager
     /**
      * The application instance.
      *
-     * @var \Illuminate\Foundation\Application
+     * @var Application
      */
-    protected $app;
-
+    protected Application $app;
 
     /**
      * Create a new Redis manager instance.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param Application $app
      * @return void
      */
     public function __construct(Application $app)
@@ -34,9 +34,10 @@ class AliGreenManager
     /**
      * Notes:
      * Date: 2020/4/2 11:43
+     * @param null $scenes
      * @return Contracts\AliGreen
      */
-    public function store($scenes = null)
+    public function store($scenes = null): Contracts\AliGreen
     {
         $scenes = $scenes ?: $this->getDefaultScenes();
 
@@ -45,8 +46,6 @@ class AliGreenManager
 
     /**
      * Get the default aliyun scenes.
-     *
-     * @return string
      */
     protected function getDefaultScenes()
     {
@@ -56,8 +55,6 @@ class AliGreenManager
     /**
      * Pass methods onto the AliGreen connection.
      *
-     * @param  string  $method
-     * @param  array  $parameters
      * @return mixed
      */
     public function __call($method, $arguments)

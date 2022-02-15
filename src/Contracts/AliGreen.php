@@ -1,11 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: james.xue
- * Date: 2020/4/2
- * Time: 11:20
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) vinhson <15227736751@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen\Contracts;
 
 interface AliGreen
@@ -13,7 +14,7 @@ interface AliGreen
     /**
      * Get connection instance.
      *
-     * @return \James\Laravel\AliGreen\Contracts\AliGreen
+     * @return AliGreen
      */
-    public function connection();
+    public function connection(): AliGreen;
 }

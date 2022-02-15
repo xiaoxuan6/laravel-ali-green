@@ -1,11 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: james.xue
- * Date: 2020/4/2
- * Time: 11:13
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) vinhson <15227736751@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Support\ServiceProvider;
@@ -17,7 +18,7 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = true;
+    protected bool $defer = true;
 
     /**
      * Bootstrap any application services.
@@ -26,9 +27,9 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if($this->app->runningInConsole()) {
+        if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/aliyun.php' => config_path('aliyun.php')
+                __DIR__ . '/../config/aliyun.php' => config_path('aliyun.php')
             ], 'aliyun-green');
         }
     }
@@ -42,7 +43,7 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton("LaravelAliGreen", function($app){
+        $this->app->singleton('LaravelAliGreen', function ($app) {
             return new AliGreenManager($app);
         });
 
@@ -54,8 +55,8 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
-        return ["LaravelAliGreen"];
+        return ['LaravelAliGreen'];
     }
 }

@@ -1,13 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: james.xue
- * Date: 2020/4/2
- * Time: 11:22
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) vinhson <15227736751@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen\Facades;
 
+use RuntimeException;
 use Illuminate\Support\Facades\Facade;
 
 class LaravelAliGreen extends Facade
@@ -17,10 +19,10 @@ class LaravelAliGreen extends Facade
      *
      * @return string
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return "LaravelAliGreen";
+        return 'LaravelAliGreen';
     }
 }
