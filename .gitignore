@@ -11,5 +11,4 @@ yarn-error.log
 mix-manifest.json
 /public/phpmd.html
 phpunit-watcher.yml
-.php-cs-fixer.php
 .php-cs-fixer.cache
