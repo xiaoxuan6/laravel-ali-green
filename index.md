@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# laravel-ali-green
 
-You can use the [editor on GitHub](https://github.com/xiaoxuan6/laravel-ali-green/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![Latest Stable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/stable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
+[![Total Downloads](https://poser.pugx.org/james.xue/laravel-ali-green/downloads.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
+[![Latest Unstable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/unstable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
+[![License](https://poser.pugx.org/james.xue/laravel-ali-green/license.svg)](https://packagist.org/packages/james.xue/laravel-ali-green)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Install
 
-### Markdown
+```shell
+composer require "james.xue/laravel-ali-green"
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+php artisan vendor:publish --tag=aliyun-green
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Usage
+以下方法均支持 `字符串` `数组`格式
 
-### Jekyll Themes
+```php
+use James\Laravel\AliGreen\Facades\LaravelAliGreen;
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xiaoxuan6/laravel-ali-green/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+// 文本
+LaravelAliGreen::checkText('cnm');
 
-### Support or Contact
+// 图片
+LaravelAliGreen::checkImg('http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg');
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+// 视频（异步）视频同步检测接口只支持通过上传视频截帧图片的方式进行检测，目前本扩展包不支持同步
+LaravelAliGreen::checkVideo(['http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4','http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4']);
+
+// 查询视频异步检测结果 taskId
+LaravelAliGreen::checkResult(['vi4bzThu6JXD347OqceSNiqp-1sjE7S','vi6Apksz3BbCg56RtbnAUpzm-1sjE7S']); 
+```
+
+About `xiaoxuan6/laravel-ali-green` specific configuration and use, refer to: [xiaoxuan6/laravel-ali-green](https://github.com/xiaoxuan6/laravel-ali-green)
+
+## License
+
+MIT
