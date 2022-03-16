@@ -31,9 +31,14 @@ LaravelAliGreen::checkVideo(['http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153
 // 查询视频异步检测结果 taskId
 LaravelAliGreen::checkResult(['vi4bzThu6JXD347OqceSNiqp-1sjE7S','vi6Apksz3BbCg56RtbnAUpzm-1sjE7S']); 
 ```
+## Testing
+```angular2html
+composer test
+```
 
-About `xiaoxuan6/laravel-ali-green` specific configuration and use, refer to: [xiaoxuan6/laravel-ali-green](https://github.com/xiaoxuan6/laravel-ali-green)
+## Changelog
+Please see [CHANGELOG](https://github.com/xiaoxuan6/laravel-ali-green/blob/v2.0/CHANGELOG.md) for more information on what has changed recently.
 
 ## License
 
-MIT
+This software is released under the [MIT](https://github.com/xiaoxuan6/laravel-ali-green/blob/v2.0/LICENSE) License.
