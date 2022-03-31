@@ -1,0 +1,14 @@
+branchName: short
+
+branches:
+  - label: enhancement
+    prefix: feature/
+  - label: bug
+    prefix: bugfix/
+  - label: '*'
+    prefix: issues/
+
+# openPR: true
+
+autoCloseIssue: true
+
