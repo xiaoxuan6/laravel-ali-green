@@ -2,6 +2,10 @@
 
 All notable changes to `xiaoxuan6/laravel-ali-green` will be documented in this file.
 
+## 2.0.3 - 2022-04-02
+
+**Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/2.0.2...2.0.3
+
 ## 2.0.2 - 2022-04-02
 
 ## What's Changed
