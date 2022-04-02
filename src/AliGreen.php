@@ -77,7 +77,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
      * @param array $scenes
      * @return AliGreen
      */
-    public function setScenes(array $scenes): static
+    public function setScenes(array $scenes): AliGreen
     {
         $this->scenes = $scenes;
 
