@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "james.xue/ali-safe-api": "^1.2|^1.3"
+        "james.xue/ali-safe-api": "^1.2|^1.3|^2.1"
     },
     "autoload": {
         "psr-4": {
