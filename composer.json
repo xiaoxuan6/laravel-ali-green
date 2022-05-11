@@ -42,7 +42,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "dev-master",
         "laravel/framework": "9.*",
-        "orchestra/testbench": "7.4.0"
+        "orchestra/testbench": "7.5.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
