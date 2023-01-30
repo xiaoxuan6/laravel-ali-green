@@ -19,7 +19,7 @@ jobs:
         run: composer install
 
       - name: PHPCSFixer check
-        run: composer fix-style
+        run: composer pint
 
       - name: Commit changes
         if: success()
