@@ -7,6 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen\Tests;
 
 use Illuminate\Foundation\Application;
@@ -18,14 +19,13 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Get package providers.
      *
-     * @param Application $app
-     *
+     * @param  Application  $app
      * @return array
      */
     protected function getPackageProviders($app): array
     {
         return [
-            LaravelAliGreenServiceProvider::class
+            LaravelAliGreenServiceProvider::class,
         ];
     }
 
@@ -38,21 +38,20 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             'region' => 'cn-shanghai',
             'content' => [
                 'cnm',
-            ]
+            ],
         ]);
     }
 
     /**
      * Get package aliases.
      *
-     * @param Application $app
-     *
+     * @param  Application  $app
      * @return array
      */
     protected function getPackageAliases($app): array
     {
         return [
-            'LaravelAliGreen' => LaravelAliGreen::class
+            'LaravelAliGreen' => LaravelAliGreen::class,
         ];
     }
 }

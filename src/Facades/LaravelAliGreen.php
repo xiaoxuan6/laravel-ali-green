@@ -7,11 +7,13 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen\Facades;
 
-use RuntimeException;
 use Illuminate\Support\Facades\Facade;
-use James\Laravel\AliGreen\{AliGreen, AliGreenManager};
+use James\Laravel\AliGreen\AliGreen;
+use James\Laravel\AliGreen\AliGreenManager;
+use RuntimeException;
 
 /**
  * @method static AliGreen checkText(array|string $text)

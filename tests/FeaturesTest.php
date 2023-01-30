@@ -7,6 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen\Tests;
 
 use James\Laravel\AliGreen\Facades\LaravelAliGreen;
@@ -16,7 +17,7 @@ class FeaturesTest extends TestCase
     public function taskIds(): array
     {
         return [
-            ['vi6VeukskdQA37eSlYkqvfBh-1vLNvZ']
+            ['vi6VeukskdQA37eSlYkqvfBh-1vLNvZ'],
         ];
     }
 
@@ -34,7 +35,6 @@ class FeaturesTest extends TestCase
 
         $this->assertIsArray($result);
         $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
-
 
         $result = LaravelAliGreen::checkText('cnm');
 
@@ -80,7 +80,6 @@ class FeaturesTest extends TestCase
 
         $this->assertIsArray($result);
         $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
-
 
         $result = LaravelAliGreen::store(['porn'])->checkImg(['http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg', 'http://img14.360buyimg.com/n8/jfs/t1/171001/3/27661/137322/61bada34E7fc1abbd/93795acd9b991d02.jpg']);
 

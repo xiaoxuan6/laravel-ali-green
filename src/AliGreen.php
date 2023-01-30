@@ -7,12 +7,14 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Contracts\Support\Arrayable;
 use James\AliGreen\AliGreen as AliGreenGreens;
+use James\AliGreen\Green\VideoAsyncScanRequest;
+use James\AliGreen\Green\VideoAsyncScanResultsRequest;
 use James\Laravel\AliGreen\Contracts\AliGreen as AliGreenInterface;
-use James\AliGreen\Green\{VideoAsyncScanRequest, VideoAsyncScanResultsRequest};
 
 class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
 {
@@ -30,7 +32,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
      */
     protected static array $response = [
         'code' => 500,
-        'msg' => '不合法的参数！'
+        'msg' => '不合法的参数！',
     ];
 
     public const ERROR_CODE = [
@@ -74,7 +76,8 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
     /**
      * Notes: set scenes
      * Date: 2020/4/2 18:53
-     * @param array $scenes
+     *
+     * @param  array  $scenes
      * @return AliGreen
      */
     public function setScenes(array $scenes): AliGreen
@@ -89,6 +92,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
     /**
      * Notes: 提交视频异步检测任务
      * Date: 2020/4/2 15:44
+     *
      * @param $video
      * @return array
      *
@@ -98,7 +102,6 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
      *  视频流支持以下协议：.rtmp、.hls、.http-flv。
      *  视频流时长限制：单个视频流检测任务最长支持24小时，超过24小时任务自动结束。
      *  视频检测的时间依赖于视频的下载时间。请保证被检测的视频文件所在的存储服务稳定可靠，建议您使用阿里云OSS存储服务存储视频文件。
-     *
      */
     public function checkVideo($video): array
     {
@@ -114,7 +117,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
 
         $taskArr = [];
         foreach ($video as $k => $v) {
-            $task = 'task' . $k;
+            $task = 'task'.$k;
             $$task = [
                 'dataId' => md5(uniqid($task)),
                 'url' => $v,
@@ -147,13 +150,14 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
             return $this->toArray();
         }
 
-        return (array)$response;
+        return (array) $response;
     }
 
     /**
      * Notes: 查询视频异步检测结果
      * Date: 2020/4/2 16:15
-     * @param array|string $taskIds
+     *
+     * @param  array|string  $taskIds
      * @return array 客户端定时轮询查询异步检测结果。建议您将查询间隔设置为30秒，最长不能超出一个小时，否则结果将会丢失。
      *
      * 客户端定时轮询查询异步检测结果。建议您将查询间隔设置为30秒，最长不能超出一个小时，否则结果将会丢失。
@@ -200,7 +204,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
             return $this->toArray();
         }
 
-        return (string)$response;
+        return (string) $response;
     }
 
     /**

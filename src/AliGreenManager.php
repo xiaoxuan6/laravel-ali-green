@@ -7,6 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Foundation\Application;
@@ -23,7 +24,7 @@ class AliGreenManager
     /**
      * Create a new Redis manager instance.
      *
-     * @param Application $app
+     * @param  Application  $app
      * @return void
      */
     public function __construct(Application $app)
@@ -34,7 +35,8 @@ class AliGreenManager
     /**
      * Notes:
      * Date: 2020/4/2 11:43
-     * @param array $scenes
+     *
+     * @param  array  $scenes
      * @return Contracts\AliGreen
      */
     public function store(array $scenes = []): Contracts\AliGreen
@@ -46,6 +48,7 @@ class AliGreenManager
 
     /**
      * Get the default aliyun scenes.
+     *
      * @return array
      */
     protected function getDefaultScenes(): array

@@ -7,6 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Support\ServiceProvider;
@@ -29,7 +30,7 @@ class LaravelAliGreenServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/aliyun.php' => config_path('aliyun.php')
+                __DIR__.'/../config/aliyun.php' => config_path('aliyun.php'),
             ], 'aliyun-green');
         }
     }
