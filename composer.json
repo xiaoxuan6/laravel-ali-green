@@ -41,7 +41,7 @@
     "minimum-stability": "dev",
     "require-dev": {
         "laravel/framework": "9.*",
-        "orchestra/testbench": "7.*",
+        "orchestra/testbench": "7.* || 7.*",
         "laravel/pint": "dev-main"
     },
     "scripts": {
