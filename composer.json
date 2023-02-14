@@ -40,7 +40,7 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "require-dev": {
-        "laravel/framework": "9.*",
+        "laravel/framework": "9.* || 9.*",
         "orchestra/testbench": "7.*",
         "laravel/pint": "dev-main"
     },
