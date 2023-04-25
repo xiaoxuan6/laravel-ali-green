@@ -11,12 +11,12 @@ return [
     /*
      * 阿里云 accessKeyId
      */
-    'accessKeyId' => '******',
+    'accessKeyId' => env('ACCESS_KEY_ID', '******'),
 
     /*
      * 阿里云 accessKeySecret
      */
-    'accessKeySecret' => '******',
+    'accessKeySecret' => env('ACCESS_KEY_SECRET', '******'),
 
     /**
      * 文字图片--支持的场景有：porn（色情）、terrorism（暴恐）、qrcode（二维码）、ad（图片广告）、 ocr（文字识别）
