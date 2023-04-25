@@ -32,8 +32,6 @@ LaravelAliGreen::checkVideo(['http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153
 LaravelAliGreen::checkResult(['vi4bzThu6JXD347OqceSNiqp-1sjE7S','vi6Apksz3BbCg56RtbnAUpzm-1sjE7S']); 
 ```
 
-About `xiaoxuan6/laravel-ali-green` specific configuration and use, refer to: [xiaoxuan6/laravel-ali-green](https://github.com/xiaoxuan6/laravel-ali-green)
-
 ## License
 
 MIT
