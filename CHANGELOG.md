@@ -6,16 +6,26 @@ All notable changes to `xiaoxuan6/laravel-ali-green` will be documented in this 
 
 ### What's Changed
 
-- Update orchestra/testbench requirement from 7.2.0 to 7.3.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/4
-- Update orchestra/testbench requirement from 7.3.0 to 7.4.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/5
-- Bump dependabot/fetch-metadata from 1.3.0 to 1.3.1 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/6
-- Bump dependabot/fetch-metadata from 1.3.1 to 1.3.3 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/9
-- Update orchestra/testbench requirement from 7.4.0 to 7.7.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/11
-- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/13
-- Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/19
-- Update orchestra/testbench requirement from 7.7.0 to 7.15.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/23
-- Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/28
-- Update orchestra/testbench requirement from 7.15.0 to 7.19.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/27
+- Update orchestra/testbench requirement from 7.2.0 to 7.3.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/4
+- Update orchestra/testbench requirement from 7.3.0 to 7.4.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/5
+- Bump dependabot/fetch-metadata from 1.3.0 to 1.3.1 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/6
+- Bump dependabot/fetch-metadata from 1.3.1 to 1.3.3 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/9
+- Update orchestra/testbench requirement from 7.4.0 to 7.7.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/11
+- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/13
+- Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/19
+- Update orchestra/testbench requirement from 7.7.0 to 7.15.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/23
+- Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/28
+- Update orchestra/testbench requirement from 7.15.0 to 7.19.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/27
 
 **Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/2.0.3...2.0.4
 
@@ -27,7 +37,8 @@ All notable changes to `xiaoxuan6/laravel-ali-green` will be documented in this 
 
 ## What's Changed
 
-- Update orchestra/testbench requirement from 7.1.0 to 7.2.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/3
+- Update orchestra/testbench requirement from 7.1.0 to 7.2.0 by @dependabot
+  in https://github.com/xiaoxuan6/laravel-ali-green/pull/3
 
 **Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/2.0.1...2.0.2
 

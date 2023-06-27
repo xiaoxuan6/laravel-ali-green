@@ -1,20 +1,18 @@
 <?php
 /**
- * This file is part of PHP CS Fixer.
+ * This file is part of james.xue/laravel-ali-green.
  *
- * (c) vinhson <15227736751@qq.com>
+ * (c) xiaoxuan6 <15227736751@qq.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen;
 
 use Illuminate\Contracts\Support\Arrayable;
 use James\AliGreen\AliGreen as AliGreenGreens;
-use James\AliGreen\Green\VideoAsyncScanRequest;
-use James\AliGreen\Green\VideoAsyncScanResultsRequest;
 use James\Laravel\AliGreen\Contracts\AliGreen as AliGreenInterface;
+use James\AliGreen\Green\{VideoAsyncScanRequest, VideoAsyncScanResultsRequest};
 
 class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
 {
@@ -77,7 +75,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
      * Notes: set scenes
      * Date: 2020/4/2 18:53
      *
-     * @param  array  $scenes
+     * @param array $scenes
      * @return AliGreen
      */
     public function setScenes(array $scenes): AliGreen
@@ -117,7 +115,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
 
         $taskArr = [];
         foreach ($video as $k => $v) {
-            $task = 'task'.$k;
+            $task = 'task' . $k;
             $$task = [
                 'dataId' => md5(uniqid($task)),
                 'url' => $v,
@@ -157,7 +155,7 @@ class AliGreen extends AliGreenGreens implements AliGreenInterface, Arrayable
      * Notes: 查询视频异步检测结果
      * Date: 2020/4/2 16:15
      *
-     * @param  array|string  $taskIds
+     * @param array|string $taskIds
      * @return array 客户端定时轮询查询异步检测结果。建议您将查询间隔设置为30秒，最长不能超出一个小时，否则结果将会丢失。
      *
      * 客户端定时轮询查询异步检测结果。建议您将查询间隔设置为30秒，最长不能超出一个小时，否则结果将会丢失。

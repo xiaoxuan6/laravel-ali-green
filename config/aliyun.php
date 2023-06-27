@@ -1,22 +1,22 @@
 <?php
 /**
- * This file is part of PHP CS Fixer.
+ * This file is part of james.xue/laravel-ali-green.
  *
- * (c) vinhson <15227736751@qq.com>
+ * (c) xiaoxuan6 <15227736751@qq.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 return [
-    /*
+    /**
      * 阿里云 accessKeyId
      */
-    'accessKeyId' => '******',
+    'accessKeyId' => env('ALI_ACCESS_KEY_ID', ''),
 
-    /*
+    /**
      * 阿里云 accessKeySecret
      */
-    'accessKeySecret' => '******',
+    'accessKeySecret' => env('ALI_ACCESS_KEY_SECRET', ''),
 
     /**
      * 文字图片--支持的场景有：porn（色情）、terrorism（暴恐）、qrcode（二维码）、ad（图片广告）、 ocr（文字识别）
@@ -28,12 +28,12 @@ return [
      */
     'scenes' => ['ad', 'porn', 'terrorism', 'qrcode'],
 
-    /*
-     *  地区 上海
+    /**
+     *  地区：上海
      */
     'region' => 'cn-shanghai',
 
-    /*
+    /**
      * 自定义 text 内容
      */
     'content' => [

@@ -42,14 +42,20 @@
     "require-dev": {
         "laravel/framework": "9.*",
         "orchestra/testbench": "7.*",
-        "laravel/pint": "dev-main"
+        "rector/rector": "^0.17.0",
+        "friendsofphp/php-cs-fixer": "dev-master"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "pint": "vendor/bin/pint"
+        "pint": "vendor/bin/php-cs-fixer fix",
+        "rector": "vendor/bin/rector process --no-diffs --clear-cache --ansi",
+        "fix": [
+            "@rector",
+            "@pint"
+        ]
     },
     "scripts-descriptions": {
         "test": "Run all tests.",
-        "fix-style": "Run style checks and fix violations."
+        "pint": "Run style checks and fix violations."
     }
 }

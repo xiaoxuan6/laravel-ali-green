@@ -1,13 +1,12 @@
 <?php
 /**
- * This file is part of PHP CS Fixer.
+ * This file is part of james.xue/laravel-ali-green.
  *
- * (c) vinhson <15227736751@qq.com>
+ * (c) xiaoxuan6 <15227736751@qq.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace James\Laravel\AliGreen\Tests;
 
 use James\Laravel\AliGreen\Facades\LaravelAliGreen;
@@ -21,7 +20,7 @@ class FeaturesTest extends TestCase
         ];
     }
 
-    public function test_check_normal_text()
+    public function test_check_normal_text(): void
     {
         $result = LaravelAliGreen::checkText('你好');
 
@@ -29,7 +28,7 @@ class FeaturesTest extends TestCase
         $this->assertEquals(200, $result['code'], $result['msg']['describe']);
     }
 
-    public function test_check_text()
+    public function test_check_text(): void
     {
         $result = LaravelAliGreen::checkText('傻逼');
 
@@ -42,7 +41,7 @@ class FeaturesTest extends TestCase
         $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
     }
 
-    public function test_check_img()
+    public function test_check_img(): void
     {
         $result = LaravelAliGreen::checkImg('http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg');
 
@@ -66,7 +65,7 @@ class FeaturesTest extends TestCase
     /**
      * @dataProvider taskIds
      */
-    public function test_check_result($taskId)
+    public function test_check_result(string $taskId): void
     {
         $result = LaravelAliGreen::checkResult($taskId);
 
@@ -74,7 +73,7 @@ class FeaturesTest extends TestCase
         $this->assertEquals(200, $result['code'], $result['msg']);
     }
 
-    public function test_set_scenes_check_img()
+    public function test_set_scenes_check_img(): void
     {
         $result = LaravelAliGreen::store(['porn'])->checkText('傻逼');
 
@@ -88,7 +87,7 @@ class FeaturesTest extends TestCase
     }
 
     /* 数组形式 */
-    public function test_check_array_text()
+    public function test_check_array_text(): void
     {
         $result = LaravelAliGreen::checkText(['傻逼']);
 
@@ -101,7 +100,7 @@ class FeaturesTest extends TestCase
         $this->assertEquals(-100, $result['code'], $result['msg']['describe']);
     }
 
-    public function test_check_array_img()
+    public function test_check_array_img(): void
     {
         $result = LaravelAliGreen::checkImg(['http://nos.netease.com/yidun/2-0-0-4f903f968e6849d3930ef0f50af74fc2.jpg', 'http://img14.360buyimg.com/n8/jfs/t1/171001/3/27661/137322/61bada34E7fc1abbd/93795acd9b991d02.jpg']);
 
