@@ -1,8 +1,8 @@
 # laravel-ali-green
 
-[![Latest Stable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/stable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
-[![Total Downloads](https://poser.pugx.org/james.xue/laravel-ali-green/downloads.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
-[![Latest Unstable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/unstable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green) 
+[![Latest Stable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/stable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green)
+[![Total Downloads](https://poser.pugx.org/james.xue/laravel-ali-green/downloads.svg)](https://packagist.org/packages/james.xue/laravel-ali-green)
+[![Latest Unstable Version](https://poser.pugx.org/james.xue/laravel-ali-green/v/unstable.svg)](https://packagist.org/packages/james.xue/laravel-ali-green)
 [![License](https://poser.pugx.org/james.xue/laravel-ali-green/license.svg)](https://packagist.org/packages/james.xue/laravel-ali-green)
 
 ## Install
@@ -14,6 +14,7 @@ php artisan vendor:publish --tag=aliyun-green
 ```
 
 ## Usage
+
 以下方法均支持 `字符串` `数组`格式
 
 ```php
@@ -31,8 +32,6 @@ LaravelAliGreen::checkVideo(['http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153
 // 查询视频异步检测结果 taskId
 LaravelAliGreen::checkResult(['vi4bzThu6JXD347OqceSNiqp-1sjE7S','vi6Apksz3BbCg56RtbnAUpzm-1sjE7S']); 
 ```
-
-About `xiaoxuan6/laravel-ali-green` specific configuration and use, refer to: [xiaoxuan6/laravel-ali-green](https://github.com/xiaoxuan6/laravel-ali-green)
 
 ## License
 

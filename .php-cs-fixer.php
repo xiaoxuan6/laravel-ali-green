@@ -1,9 +1,9 @@
 <?php
 
 $header = <<<HEADER
-This file is part of PHP CS Fixer.
+This file is part of james.xue/laravel-ali-green.
 
-(c) vinhson <15227736751@qq.com>
+(c) xiaoxuan6 <15227736751@qq.com>
 
 This source file is subject to the MIT license that is bundled
 with this source code in the file LICENSE.
@@ -61,7 +61,7 @@ return (new PhpCsFixer\Config())
         'return_assignment' => true,
         'blank_line_after_namespace' => true,
         'no_leading_namespace_whitespace' => true,
-        'single_blank_line_before_namespace' => true,
+//        'single_blank_line_before_namespace' => true,
         'fully_qualified_strict_types' => true,
         'global_namespace_import' => [
             'import_classes' => true,

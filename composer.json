@@ -2,7 +2,12 @@
     "name": "james.xue/laravel-ali-green",
     "description": "laravel 阿里鉴黄包括文本、图片、视频，关键词文本检测以及对图片涉黄、暴恐、敏感检测、广告、二维码视频色情、暴恐涉政视频等",
     "type": "library",
-    "keywords": ["laravel", "green", "yellow", "ali-green"],
+    "keywords": [
+        "laravel",
+        "green",
+        "yellow",
+        "ali-green"
+    ],
     "support": {
         "issues": "https://github.com/xiaoxuan6/laravel-ali-green/issues",
         "source": "https://github.com/xiaoxuan6/laravel-ali-green"
@@ -14,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">8.0",
+        "php": "^8.0",
         "james.xue/ali-safe-api": "^2.1"
     },
     "autoload": {
@@ -29,11 +34,11 @@
     },
     "extra": {
         "laravel": {
-            "providers":[
+            "providers": [
                 "James\\Laravel\\AliGreen\\LaravelAliGreenServiceProvider"
             ],
             "aliases": {
-                "LaravelAliGreen" : "James\\Laravel\\AliGreen\\Facades\\LaravelAliGreen"
+                "LaravelAliGreen": "James\\Laravel\\AliGreen\\Facades\\LaravelAliGreen"
             }
         }
     },
@@ -42,14 +47,20 @@
     "require-dev": {
         "laravel/framework": "9.*",
         "orchestra/testbench": "7.*",
-        "laravel/pint": "dev-main"
+        "rector/rector": "^0.17.0",
+        "friendsofphp/php-cs-fixer": "dev-master"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "pint": "vendor/bin/pint"
+        "pint": "vendor/bin/php-cs-fixer fix",
+        "rector": "vendor/bin/rector process --no-diffs --clear-cache --ansi",
+        "fix": [
+            "@rector",
+            "@pint"
+        ]
     },
     "scripts-descriptions": {
         "test": "Run all tests.",
-        "fix-style": "Run style checks and fix violations."
+        "pint": "Run style checks and fix violations."
     }
 }
