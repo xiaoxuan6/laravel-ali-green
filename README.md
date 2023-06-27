@@ -13,6 +13,26 @@ composer require "james.xue/laravel-ali-green"
 php artisan vendor:publish --tag=aliyun-green
 ```
 
+## 增加 `文本` 查询缓存功能
+
+将 `disable` 设置为 `true`, 每次 `本文` 检测的结果都会写入 `redis`, 重复检测直接从 `redis` 获取结果。
+
+默认不安装 `redis` 扩展，如果使用该功能需要自行安装 `predis/predis`
+
+```php
+'cache' => [
+    'disable' => false,
+
+    'redis' => [
+        'url' => env('ALI_REDIS_URL'),
+        'host' => env('ALI_REDIS_HOST', ''),
+        'password' => env('ALI_REDIS_PASSWORD', ''),
+        'port' => env('ALI_REDIS_PORT, '),
+        'database' => env('ALI_REDIS_CACHE_DB', '1'),
+    ],
+]
+```
+
 ## Usage
 
 以下方法均支持 `字符串` `数组`格式
