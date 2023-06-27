@@ -18,6 +18,7 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->skip([
         __DIR__.'/src/AliGreen.php',
+        __DIR__.'/src/AliGreenManager.php',
     ]);
 
     // define sets of rules

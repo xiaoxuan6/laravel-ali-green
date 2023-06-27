@@ -39,4 +39,19 @@ return [
     'content' => [
         'cnm',
     ],
+
+    /**
+     * 文字检测是否使用缓存
+     */
+    'cache' => [
+        'disable' => false,
+
+        'redis' => [
+            'url' => env('ALI_REDIS_URL'),
+            'host' => env('ALI_REDIS_HOST', ''),
+            'password' => env('ALI_REDIS_PASSWORD', ''),
+            'port' => env('ALI_REDIS_PORT, '),
+            'database' => env('ALI_REDIS_CACHE_DB', '1'),
+        ],
+    ]
 ];

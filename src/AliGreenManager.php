@@ -9,6 +9,8 @@
  */
 namespace James\Laravel\AliGreen;
 
+use RuntimeException;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Foundation\Application;
 
 class AliGreenManager
@@ -50,6 +52,35 @@ class AliGreenManager
      */
     public function __call($method, $arguments)
     {
-        return $this->store()->{$method}(...$arguments);
+        $fn = fn () => $this->store()->{$method}(...$arguments);
+
+        if($method == 'checkText' and $this->app['config']['aliyun.cache.disable']) {
+
+            $aliRedis = $this->app['config']['aliyun.cache.redis'];
+            $this->app['config']->set('database.redis.cache', $aliRedis);
+
+            $cache = Cache::store('redis')->tags('ali_green');
+
+            $result = [];
+            $param = current($arguments);
+            if(! $param) {
+                throw new RuntimeException('invalid params');
+            }
+
+            $params = is_array($param) ? $param : [$param];
+            foreach ($params as $key) {
+                $md5Key = md5($key);
+                if($cache->has($md5Key)) {
+                    $result[] = json_decode($cache->get($md5Key), true);
+                } else {
+                    $response = $fn();
+                    $cache->put($md5Key, json_encode($response, JSON_UNESCAPED_UNICODE));
+                }
+            }
+
+            return $result;
+        }
+
+        return $fn();
     }
 }
