@@ -21,14 +21,16 @@ php artisan vendor:publish --tag=aliyun-green
 
 ```php
 'cache' => [
-    'disable' => false,
+    'disable' => env('ALI_CACHE_DISABLE', true),
+
+    'tag_name' => env('ALI_CACHE_TAG_NAME', 'ali_green'),
 
     'redis' => [
-        'url' => env('ALI_REDIS_URL'),
-        'host' => env('ALI_REDIS_HOST', ''),
-        'password' => env('ALI_REDIS_PASSWORD', ''),
-        'port' => env('ALI_REDIS_PORT, '),
-        'database' => env('ALI_REDIS_CACHE_DB', '1'),
+        'url' => env('ALI_REDIS_URL',''),
+        'host' => env('ALI_REDIS_HOST', '127.0.0.1'),
+        'password' => env('ALI_REDIS_PASSWORD', null),
+        'port' => env('ALI_REDIS_PORT', '6379'),
+        'database' => env('ALI_REDIS_CACHE_DB', 1),
     ],
 ]
 ```
