@@ -19,6 +19,8 @@ use James\Laravel\AliGreen\{AliGreen, AliGreenManager};
  * @method static AliGreen checkVideo(array|string $video)
  * @method static AliGreen checkResult(array|string $taskIds)
  * @method static AliGreenManager store(array $scenes = [])
+ * @method static bool forget($key)
+ * @method static bool flush()
  */
 class LaravelAliGreen extends Facade
 {

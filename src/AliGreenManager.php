@@ -12,9 +12,17 @@ namespace James\Laravel\AliGreen;
 use RuntimeException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Foundation\Application;
+use James\Laravel\AliGreen\Traits\CacheTrait;
 
 class AliGreenManager
 {
+    use CacheTrait;
+
+    /**
+     * @var \Illuminate\Cache\TaggedCache
+     */
+    public static $cache;
+
     /**
      * Create a new Redis manager instance.
      *
@@ -22,6 +30,10 @@ class AliGreenManager
      */
     public function __construct(protected Application $app)
     {
+        $aliRedis = $this->app['config']['aliyun.cache.redis'];
+        $this->app['config']->set('database.redis.cache', $aliRedis);
+
+        self::$cache = Cache::store('redis')->tags($this->app['config']['aliyun.cache.tag_name']);
     }
 
     /**
@@ -55,12 +67,6 @@ class AliGreenManager
         $fn = fn () => $this->store()->{$method}(...$arguments);
 
         if($method == 'checkText' and $this->app['config']['aliyun.cache.disable']) {
-
-            $aliRedis = $this->app['config']['aliyun.cache.redis'];
-            $this->app['config']->set('database.redis.cache', $aliRedis);
-
-            $cache = Cache::store('redis')->tags('ali_green');
-
             $result = [];
             $param = current($arguments);
             if(! $param) {
@@ -70,11 +76,11 @@ class AliGreenManager
             $params = is_array($param) ? $param : [$param];
             foreach ($params as $key) {
                 $md5Key = md5($key);
-                if($cache->has($md5Key)) {
-                    $result[] = json_decode($cache->get($md5Key), true);
+                if(self::$cache->has($md5Key)) {
+                    $result[] = json_decode(self::$cache->get($md5Key), true);
                 } else {
                     $response = $fn();
-                    $cache->put($md5Key, json_encode($response, JSON_UNESCAPED_UNICODE));
+                    self::$cache->put($md5Key, json_encode($response, JSON_UNESCAPED_UNICODE));
                 }
             }
 
