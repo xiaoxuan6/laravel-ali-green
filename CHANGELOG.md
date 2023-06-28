@@ -2,6 +2,14 @@
 
 All notable changes to `james.xue/laravel-ali-green` will be documented in this file.
 
+## v3.1.0 - 2023-06-28
+
+### What's Changed
+
+- Add cache forget and flush
+
+**Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/v3.0.0...v3.1.0
+
 ## v3.0.0 - 2023-06-27
 
 ### What's Changed
