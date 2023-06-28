@@ -21,12 +21,12 @@ php artisan vendor:publish --tag=aliyun-green
 
 ```php
 'cache' => [
-    'disable' => env('ALI_CACHE_DISABLE', true),
+    'disable' => env('ALI_CACHE_DISABLE', false),
 
     'tag_name' => env('ALI_CACHE_TAG_NAME', 'ali_green'),
 
     'redis' => [
-        'url' => env('ALI_REDIS_URL',''),
+        'url' => env('ALI_REDIS_URL', ''),
         'host' => env('ALI_REDIS_HOST', '127.0.0.1'),
         'password' => env('ALI_REDIS_PASSWORD', null),
         'port' => env('ALI_REDIS_PORT', '6379'),

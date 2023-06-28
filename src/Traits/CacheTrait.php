@@ -17,7 +17,7 @@ trait CacheTrait
      * @param string $key
      * @return bool
      */
-    public static function forget($key)
+    public static function forget($key): bool
     {
         return self::$cache->forget(md5($key));
     }
