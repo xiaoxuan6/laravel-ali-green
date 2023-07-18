@@ -2,6 +2,14 @@
 
 All notable changes to `james.xue/laravel-ali-green` will be documented in this file.
 
+## v3.1.2 - 2023-07-18
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/xiaoxuan6/laravel-ali-green/pull/38
+
+**Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/v3.1.1...v3.1.2
+
 ## v3.1.1 - 2023-06-28
 
 **Full Changelog**: https://github.com/xiaoxuan6/laravel-ali-green/compare/v3.1.0...v3.1.1
