@@ -10,6 +10,7 @@
 namespace James\Laravel\AliGreen;
 
 use RuntimeException;
+use Illuminate\Cache\TaggedCache;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Foundation\Application;
 use James\Laravel\AliGreen\Traits\CacheTrait;
@@ -19,9 +20,9 @@ class AliGreenManager
     use CacheTrait;
 
     /**
-     * @var \Illuminate\Cache\TaggedCache
+     * @var TaggedCache
      */
-    public static $cache;
+    public static TaggedCache $cache;
 
     /**
      * Create a new Redis manager instance.
@@ -79,12 +80,12 @@ class AliGreenManager
                 if(self::$cache->has($md5Key)) {
                     $result[] = json_decode(self::$cache->get($md5Key), true);
                 } else {
-                    $response = $fn();
+                    $result[] = $response = $fn();
                     self::$cache->put($md5Key, json_encode($response, JSON_UNESCAPED_UNICODE));
                 }
             }
 
-            return $result;
+            return is_array($param) ? $result : current($result);
         }
 
         return $fn();
