@@ -48,7 +48,7 @@
     "require-dev": {
         "laravel/framework": "^9.0 | ^10.0",
         "orchestra/testbench": "7.*",
-        "rector/rector": "^0.17.0",
+        "rector/rector": "^0.17.0 || ^1.0.0",
         "friendsofphp/php-cs-fixer": "dev-master"
     },
     "scripts": {
